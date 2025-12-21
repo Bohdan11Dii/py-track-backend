@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <section class="py-6 bg-light-primary">
+        <div class="container">
+            <h2 class="font-weight-bold">Modules</h2>
+
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for module in module_list %}
+                    <tr>
+                        <th scope="row">{{ module.id }}</th>
+                        <td>{{ module.title }}</td>
+                        <td>
+                            <a href="{% url 'courses:module-update' module.slug %}">
+                                <button type="button" class="btn btn-outline-warning">Update</button>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'courses:module-delete' module.slug %}">
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+
+                {% empty %}
+
+                    <p>No modules</p>
+
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'courses:module-create' %}">
+                <button class="btn btn-outline-primary">Add new
+                    module
+                </button>
+            </a>
+
+
+        </div>
+    </section>
+
+
+{% endblock %}

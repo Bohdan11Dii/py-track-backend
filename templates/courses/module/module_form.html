@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+
+{% block content %}
+    <h2 class="mb-4" style="text-align: center">{{ object|yesno:"Update,Create" }} Module</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form|crispy }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'courses:module-list' %}" class="btn btn-simple">
+            Cancel
+        </a>
+    </form>
+{% endblock %}

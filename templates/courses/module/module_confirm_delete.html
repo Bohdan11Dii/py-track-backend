@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container d-flex justify-content-center align-items-center min-vh-100" style="margin-top: 10px">
+    <div class="card shadow-lg border-0 p-4" style="max-width: 600px; width: 100%; border-radius: 20px;">
+      <div class="card-body text-center">
+
+        <h1 class="mb-4 text-danger fw-bold">⚠ Delete Module</h1>
+
+        <p class="fs-5">
+          Are you sure you want to delete module:
+          <strong class="text-info">{{ module.title }}</strong>?
+        </p>
+
+        <!-- Відступ зверху -->
+        <form action="" method="POST" class="mt-5">
+          {% csrf_token %}
+          <!-- Відступи між кнопками -->
+          <div class="d-flex" style="justify-content: space-around; flex-wrap: wrap">
+            <input type="submit" value="✅ Yes, delete" class="btn btn-danger px-4 py-2 fw-semibold me-3">
+            <a href="{% url 'courses:module-list' %}" class="btn btn-secondary px-4 py-2 fw-semibold">
+              ❌ Cancel
+            </a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
