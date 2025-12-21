@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <section class="py-6 bg-light-primary">
+        <div class="container">
+            <h2 class="font-weight-bold">Topics</h2>
+
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for topic in topic_list %}
+                    <tr>
+                        <th scope="row">{{ topic.id }}</th>
+                        <td>{{ topic.title }}</td>
+
+                        <td>
+                            {% if topic.slug %}
+                                <a href="{% url 'courses:topic-update' topic.slug %}">
+                                    <button type="button" class="btn btn-outline-warning">Update</button>
+
+                                </a>
+                            {% else %}<span>Saving...</span>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            <a href="{% url 'courses:topic-delete' topic.slug %}">
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+
+                {% empty %}
+
+                    <p>No topics</p>
+
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'courses:topic-create' %}">
+                <button class="btn btn-outline-primary">Add new
+                    topic
+                </button>
+            </a>
+
+
+        </div>
+    </section>
+
+
+{% endblock %}
