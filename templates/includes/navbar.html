@@ -17,19 +17,29 @@
 
 
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                        <span class="no-icon">Account</span>
-                    </a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                        <span class="no-icon">Log out</span>
-                    </a>
-                </li>
+            <ul class="navbar-nav ml-auto" style="align-items: center">
+                {% if user.is_authenticated %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pablo">
+                            <span class="no-icon">{{ user.username }}</span>
+                        </a>
+                    </li>
+                    <form method="post" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pablo">
+                                <button class="btn btin-primary">Log out</button>
+                            </a>
+                        </li>
+                    </form>
+                {% endif %}
+
             </ul>
+
+
         </div>
     </div>
 </nav>

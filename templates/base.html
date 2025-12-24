@@ -70,14 +70,13 @@
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="{% static 'js/light-bootstrap-dashboard.js' %}" type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<script src="{% static 'js/demo.js' %}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
-
-
-    });
-</script>
+{#<script src="{% static 'js/demo.js' %}"></script>#}
+{#<script type="text/javascript">#}
+{#    $(document).ready(function () {#}
+{#        if (typeof demo !== 'undefined' && demo.initDashboardPageCharts) {#}
+{#            demo.initDashboardPageCharts();#}
+{#        }#}
+{#    });#}
+{#</script>#}
 
 </html>

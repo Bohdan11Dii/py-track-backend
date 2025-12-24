@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'courses.apps.CoursesConfig',
+    'users',
 
     'crispy_forms',
     'crispy_bootstrap4',
@@ -123,3 +125,6 @@ STATICFILES_DIRS = [
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+AUTH_USER_MODEL = "users.CustomUser"
+# LOGIN_REDIRECT_URL = "/"
