@@ -56,9 +56,6 @@ class TopicCreateView(LoginRequiredMixin, generic.CreateView):
     template_name = "courses/topic/topic_form.html"
     success_url = reverse_lazy("courses:topic-list")
 
-    def get_queryset(self):
-        return Topic.objects.select_related('module')
-
 
 class TopicUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Topic

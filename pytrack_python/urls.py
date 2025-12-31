@@ -24,5 +24,6 @@ urlpatterns = [
                   # path("accounts/", include("django.contrib.auth.urls")),
 
                   path('cousres/', include('courses.urls', namespace='courses')),
+                  path('quizzes/', include('quizzes.urls', namespace='quizzes')),
                   path('users/', include('users.urls', namespace='users')),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

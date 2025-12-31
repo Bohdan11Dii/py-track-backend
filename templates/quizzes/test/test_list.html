@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <section class="py-6 bg-light-primary">
+        <div class="container">
+            <h2 class="font-weight-bold">Tests</h2>
+
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Active</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for test in test_list %}
+                    <tr>
+                        <th scope="row">{{ test.id }}</th>
+                        <td>{{ test.title }}</td>
+                        <td>{{ test.is_active }}</td>
+                        <td>
+                            <a href="{% url 'quizzes:test-update' test.id %}">
+                                <button type="button" class="btn btn-outline-warning">Update</button>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'quizzes:test-delete' test.id %}">
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+
+                {% empty %}
+
+                    <p>No tests</p>
+
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'quizzes:test-create' %}">
+                <button class="btn btn-outline-primary">Add new
+                    test
+                </button>
+            </a>
+
+
+        </div>
+    </section>
+
+
+{% endblock %}
