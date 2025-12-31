@@ -5,7 +5,7 @@ from quizzes.models import Test
 class TestForm(forms.ModelForm):
     class Meta:
         model = Test
-        fields = ['topic', 'title', 'description', 'is_active']
+        fields =  '__all__'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

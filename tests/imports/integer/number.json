@@ -1,0 +1,92 @@
+{
+  "topic": "Numbers",
+  "title": "Numbers Test",
+  "description": "There are three numeric types in Python: int, float, complex",
+  "questions": [
+    {
+      "text": "Which of these is an integer in Python?",
+      "answers": [
+        {
+          "text": "5",
+          "is_correct": true
+        },
+        {
+          "text": "5.0",
+          "is_correct": false
+        },
+        {
+          "text": "5+0j",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Which of these represents a floating-point number?",
+      "answers": [
+        {
+          "text": "3.14",
+          "is_correct": true
+        },
+        {
+          "text": "7",
+          "is_correct": false
+        },
+        {
+          "text": "2+3j",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is a complex number?",
+      "answers": [
+        {
+          "text": "4+5j",
+          "is_correct": true
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        },
+        {
+          "text": "3.5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "What is the result type of 3 / 2 in Python 3?",
+      "answers": [
+        {
+          "text": "float",
+          "is_correct": true
+        },
+        {
+          "text": "int",
+          "is_correct": false
+        },
+        {
+          "text": "complex",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Which of these operations will result in a complex number?",
+      "answers": [
+        {
+          "text": "1 + 2j",
+          "is_correct": true
+        },
+        {
+          "text": "5 / 2",
+          "is_correct": false
+        },
+        {
+          "text": "7 * 3",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-a
 
 {% block content %}
     <h2 class="mb-4" style="text-align: center">{{ object|yesno:"Update,Create" }} Test</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
             {{ form.as_p }}
@@ -12,8 +11,6 @@ a
         <a href="{% url 'quizzes:test-list' %}" class="btn btn-simple">
             Cancel
         </a>
-        <a href="" class="btn btn-primary">
-            Завантажити питання
-        </a>
+
     </form>
 {% endblock %}

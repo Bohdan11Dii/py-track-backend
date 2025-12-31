@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <style>
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+    <div class="container-fluid">
+
+        <div class="container">
+            <!-- Title -->
+            <a href="{% url 'quizzes:test-list' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <h2 class="h5 mb-0"><a href="#" class="text-muted"></a> Topic {{ test.topic }}</h2>
+            </div>
+
+            <!-- Main content -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Details -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                {{ test.description }}
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Payment -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3 class="h6">Question for test:</h3>
+                                    <hr>
+                                    {% for question in test.questions.all %}
+                                        <div class="question-block">
+                                            <p><strong>{{ question.text }}</strong></p>
+
+                                            <ul>
+                                                {% for answer in question.answers.all %}
+                                                    <li class="{% if answer.is_correct %}correct-answer{% endif %}">
+                                                        {{ answer.text }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Customer Notes -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="h6">Status</h3>
+                            <p>{{ test.import_status }}</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <!-- Shipping information -->
+                        <div class="card-body">
+                            <h3 class="h6">Information</h3>
+                            <strong>File source: </strong>
+                            <span>
+                               {{ test.source_file }}
+                           </span>
+                            <hr>
+                            <strong>Active: </strong>
+                            <span>
+                               {{ test.is_active }}
+                           </span>
+                            <hr>
+                            <strong>Created: </strong>
+                            <span>
+                               {{ test.created_at }}
+                           </span>
+                            <hr>
+                            <strong>Updated: </strong>
+                            <span>
+                               {{ test.updated_at }}
+                           </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

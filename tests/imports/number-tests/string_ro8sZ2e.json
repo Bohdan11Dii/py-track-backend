@@ -1,0 +1,48 @@
+{
+  "topic": "Strings",
+  "title": "Strings Test",
+  "description": "Strings in Python are sequences of characters used to store and manipulate text",
+  "questions": [
+    {
+      "text": "Which of the following is a string in Python?",
+      "answers": [
+        { "text": "\"Hello\"", "is_correct": true },
+        { "text": "123", "is_correct": false },
+        { "text": "10.5", "is_correct": false }
+      ]
+    },
+    {
+      "text": "How do you define a string in Python?",
+      "answers": [
+        { "text": "Using single or double quotes", "is_correct": true },
+        { "text": "Using curly braces {}", "is_correct": false },
+        { "text": "Using square brackets []", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Which operation is used to concatenate strings?",
+      "answers": [
+        { "text": "+", "is_correct": true },
+        { "text": "-", "is_correct": false },
+        { "text": "*", "is_correct": false }
+      ]
+    },
+    {
+      "text": "What will be the result of 'Hi' * 3?",
+      "answers": [
+        { "text": "HiHiHi", "is_correct": true },
+        { "text": "Hi3", "is_correct": false },
+        { "text": "Error", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Which method converts a string to uppercase?",
+      "answers": [
+        { "text": "upper()", "is_correct": true },
+        { "text": "capitalize()", "is_correct": false },
+        { "text": "toUpper()", "is_correct": false }
+      ]
+    }
+  ]
+}
+
